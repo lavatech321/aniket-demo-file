@@ -1,0 +1,62 @@
+
+---
+- name: "Website -----> ONE in Progress  "
+  hosts: server1
+  tasks:
+
+    - name: "Install Apache"
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Clone GitHub repository
+      git:
+        repo: https://github.com/lavatech321/aniketweb1.git
+        dest: /var/www/html
+        force: yes
+
+    - name: "Service Restart"
+      service:
+        name: httpd
+        state: restarted
+
+- name: "Website -----> TWO in Progress  "
+  hosts: server2
+  tasks:
+
+    - name: "Install Apache"
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Clone GitHub repository
+      git:
+        repo: https://github.com/lavatech321/lavatechweb2.git
+        dest: /var/www/html
+        force: yes
+
+    - name: "Service Restart"
+      service:
+        name: httpd
+        state: restarted
+
+- name: "Website -----> THREE in Progress  "
+  hosts: server3
+  tasks:
+
+    - name: "Install Apache"
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Clone GitHub repository
+      git:
+        repo: https://github.com/lavatech321/aniketweb3.git
+        dest: /var/www/html
+        force: yes
+
+    - name: "Service Restart"
+      service:
+        name: httpd
+        state: restarted
+...
